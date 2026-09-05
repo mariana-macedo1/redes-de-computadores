@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>redes</h1>
+    <h2>cadastro de alunos</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>nome:</label>
+            <input type="text" name="nome" required>
+            <label>curso:</label>
+            <input type="text" name="curso" required>
+            <label>período:</label>
+            <input type="number" name="periodo" min="1" required>
+        </div>
+
+        <button type="submit">
+            Cadastrar
+        </button>
+    </form>
+    <hr>
+
+    <h2>alunos cadastrados</h2>
+    {% for aluno in alunos %}
+        <p>
+            <strong>{{ aluno.nome }}</strong>
+            -
+            {{ aluno.curso }}
+            -
+            {{ aluno.periodo }}º período
+        </p>
+    {% empty %}
+        <p>nenhum aluno cadastrado.</p>
+    {% endfor %}
+
+</body>
+</html>
