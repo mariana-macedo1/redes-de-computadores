@@ -16,8 +16,6 @@
             <input type="text" name="nome" required>
             <label>curso:</label>
             <input type="text" name="curso" required>
-            <label>período:</label>
-            <input type="number" name="periodo" min="1" required>
         </div>
 
         <button type="submit">
@@ -32,8 +30,6 @@
             <strong>{{ aluno.nome }}</strong>
             -
             {{ aluno.curso }}
-            -
-            {{ aluno.periodo }}º período
         </p>
     {% empty %}
         <p>nenhum aluno cadastrado.</p>
